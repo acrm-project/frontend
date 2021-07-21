@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react'
 import { useStore } from 'effector-react'
 import { Spin } from 'antd'
-import { MainLayout } from '../../layouts/main'
+import { MainLayout } from '../../shared/layouts/main'
 import { $applicationToEdit } from '../../features/edit-application'
 import { useParams } from 'react-router-dom'
 import {

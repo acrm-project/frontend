@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { MainLayout } from '../../layouts/main'
+import { MainLayout } from '../../shared/layouts/main'
 import { ClientsSearch } from '../../features/clients-search/templates/search'
 import { ClientsTable } from '../../ui/clients-table'
 import { SearchPageContainer } from './styled'

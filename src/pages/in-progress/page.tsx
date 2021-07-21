@@ -1,5 +1,5 @@
 import { FC, useEffect } from 'react'
-import { MainLayout } from '../../layouts/main'
+import { MainLayout } from '../../shared/layouts/main'
 import {
   fetchApplicationsInProgress,
   resetApplicationsInProgress,
