@@ -1,5 +1,9 @@
 import { createEffect, createEvent, forward } from 'effector'
-import { ApplicationFormType, ApplicationType } from 'shared/api/application'
+import {
+  ApplicationFormType,
+  ApplicationType,
+  createApplicationFromScratch,
+} from 'shared/api/application'
 
 export const createApplication = createEvent<ApplicationFormType>()
 
@@ -10,3 +14,7 @@ export const createApplicationFx = createEffect<
 >()
 
 forward({ from: createApplication, to: createApplicationFx })
+
+createApplicationFx.use(async (applicationFormData) => {
+  return await createApplicationFromScratch(applicationFormData)
+})

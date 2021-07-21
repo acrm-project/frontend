@@ -4,7 +4,7 @@ import {
   onOpen,
   onClose,
 } from '../../../lib/create-application-modal-window/model'
-import { CreateApplicationForm } from '../../../features/create-application/templates/form'
+import { CreateApplicationForm } from 'features/create-application-from-scratch'
 import { ModalWindow } from '../../../ui/create-application-modal'
 import { Layout, Children } from '../../../app/global-styles/common'
 import { SideMenu } from '../../../ui/side-menu'
@@ -31,7 +31,6 @@ export const MainLayout: FC = ({ children }) => {
               client: { ...client },
               vehicle: { ...vehicle },
               issues: { ...issues },
-              closed: false,
             }}
             submitionText='Создать'
             closable={true}
