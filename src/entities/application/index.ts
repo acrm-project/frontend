@@ -1,2 +1,1 @@
-export { $application } from './model'
-export {} from './ui'
+export { $application, $applications } from './model'

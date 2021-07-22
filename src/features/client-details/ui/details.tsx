@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { useStore } from 'effector-react'
-import { $clientDetails } from '../../pages/client-applications/model'
+import { $clientDetails } from '../model'
 import { Details, ClientName } from './styled'
 
 export const ClientDetails: FC = () => {
@@ -8,7 +8,7 @@ export const ClientDetails: FC = () => {
 
   return (
     <Details>
-      <ClientName>{`${clientDetails.client?.name} ${clientDetails.client?.surname} - ${clientDetails.applicationsLength} заявок`}</ClientName>
+      <ClientName>{`${clientDetails.client} - ${clientDetails.applicationsLength} заявок`}</ClientName>
     </Details>
   )
 }

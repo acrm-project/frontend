@@ -7,7 +7,7 @@ import {
   $loading,
 } from '../../features/client'
 import { ClientApplicationsTable } from '../../ui/client-applications-table'
-import { ClientDetails } from '../client-details'
+import { ClientDetails } from 'features/client-details'
 import { Spin } from 'antd'
 
 export const ClientApplicationsData = (): JSX.Element => {

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useStore } from 'effector-react'
-import { Search } from '../../../reusable/search'
+import { Search } from 'shared/ui/search'
 import {
   $searchQuery,
   changeSearchQuery,
