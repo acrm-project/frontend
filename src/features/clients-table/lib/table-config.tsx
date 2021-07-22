@@ -1,6 +1,6 @@
 import { Button } from 'antd'
-import { ClientType } from '../../api/application-creation/types'
-import { historyPush } from '../../lib/routing/history'
+import { ClientType } from 'shared/api/client'
+import { historyPush } from 'lib/routing/history'
 
 export const columns = [
   {

@@ -1,7 +1,7 @@
 import { createStore, createEvent, createEffect, sample } from 'effector'
-import { getClientsBySearchQuery } from '../../api/clients'
-import { ClientType } from '../../api/application-creation/types'
-import { pending } from 'patronum'
+import { $clients } from 'entities/client'
+import { getClientsBySearchQuery } from 'shared/api/client'
+import { ClientType } from 'shared/api/client'
 
 // types
 
@@ -18,7 +18,6 @@ export const searchRequestFx = createEffect<string, ClientType[]>()
 
 // stores
 export const $searchQuery = createStore<string>('')
-export const $fetchedClients = createStore<ClientType[]>([])
 
 // relationships
 
@@ -30,7 +29,7 @@ $searchQuery
   .on(changeSearchQuery, (_prev, searchQuery) => searchQuery)
   .reset(resetSearchQuery)
 
-$fetchedClients
+$clients
   .on(searchRequestFx.doneData, (_prev, results) => results)
   .reset(resetFetchedClients)
 
@@ -39,5 +38,3 @@ sample({
   source: $searchQuery,
   target: searchRequestFx,
 })
-
-export const $loading = pending({ effects: [searchRequestFx] })

@@ -1,7 +1,7 @@
 import { FC } from 'react'
-import { MainLayout } from '../../shared/layouts/main'
-import { ClientsSearch } from '../../features/clients-search/templates/search'
-import { ClientsTable } from '../../ui/clients-table'
+import { MainLayout } from 'shared/layouts/main'
+import { ClientsSearch } from 'features/clients-search'
+import { ClientsTable } from 'features/clients-table'
 import { SearchPageContainer } from './styled'
 
 export const ClientsPage: FC = () => {

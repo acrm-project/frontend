@@ -1,0 +1,1 @@
+export { ClientsSearch } from './search'

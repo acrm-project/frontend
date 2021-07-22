@@ -1,29 +1,26 @@
 import { useEffect } from 'react'
 import { useStore } from 'effector-react'
-import {
-  $fetchedClients,
-  resetFetchedClients,
-  $loading,
-} from '../../features/clients-search'
-import { StyledSearchResults } from './styled'
-import { columns } from './table-config'
 import { Empty, Table } from 'antd'
+import { $clients, resetClients } from 'entities/client'
+import { $loading } from 'processes/clients-fetching'
+import { StyledSearchResults } from './styled'
+import { columns } from '../lib/table-config'
 
 export const ClientsTable = (): JSX.Element => {
   const loading = useStore($loading)
-  const fetchedClients = useStore($fetchedClients)
+  const clients = useStore($clients)
 
   useEffect(() => {
-    return () => resetFetchedClients()
+    return () => resetClients()
   }, [])
 
   return (
     <StyledSearchResults>
-      {fetchedClients.length ? (
+      {clients.length ? (
         <Table
           columns={columns}
           bordered
-          dataSource={fetchedClients.map((client, index) => {
+          dataSource={clients.map((client, index) => {
             return {
               ...client,
               fullName: `${client.name} ${client.surname}`,

@@ -1,2 +1,1 @@
-export {} from './model'
-export {} from './ui'
+export { $client, $clients, resetClient, resetClients } from './model'

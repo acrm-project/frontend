@@ -1,4 +1,4 @@
-import { request, ResponseType } from '../request'
+import { request } from '../request'
 
 export type ApplicationType = {
   id: number
