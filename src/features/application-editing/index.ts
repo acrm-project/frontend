@@ -5,3 +5,4 @@ export {
   fetchApplicationToEdit,
   $loading,
 } from './model'
+export { EditApplicationForm } from './ui'

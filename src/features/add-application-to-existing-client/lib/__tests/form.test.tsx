@@ -5,7 +5,7 @@ import {
   vehicle,
 } from '../../../../reusable/form/initial-form-values'
 import { ModalWindow } from '../../../../ui/create-application-modal'
-import { AddApplicationForm } from '../../templates/form'
+import { AddApplicationForm } from '../../ui/form'
 
 describe('Add application modal with form', () => {
   const onOpen = jest.fn()

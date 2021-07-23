@@ -1,5 +1,5 @@
 import { createEvent, createEffect, forward, sample } from 'effector'
-import { deleteOne } from '../../api/application-deleting'
+import { deleteOne } from 'api/application-deleting'
 import { $clientId } from 'entities/client'
 import { getApplications } from 'entities/application'
 

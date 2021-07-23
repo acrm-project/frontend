@@ -1,8 +1,8 @@
 import { createEvent, createEffect, sample } from 'effector'
-import { addNewApplication } from '../../api/application-creation'
-import { NewClientApplicationType } from '../../api/application-creation/types'
-import { getClientApplications } from 'features/client'
+import { addNewApplication } from 'api/application-creation'
+import { NewClientApplicationType } from 'api/application-creation/types'
 import { $clientId } from 'entities/client'
+import { getApplications } from 'entities/application'
 
 // types
 
@@ -33,5 +33,5 @@ sample({
 sample({
   clock: addNewApplicationFx.done,
   source: $clientId,
-  target: getClientApplications,
+  target: getApplications,
 })

@@ -6,11 +6,11 @@ import {
   Form,
   ButtonSection,
 } from 'shared/ui/form-sections/styled'
-import { IApplicationFromScratch } from '../../../api/application-creation/types'
 import { Issues, Client, Vehicle } from 'shared/ui/form-sections'
+import { ApplicationType } from 'shared/api/application'
 
 type EditApplicationFormPropsType = {
-  fields: IApplicationFromScratch
+  fields: ApplicationType
   submitionText: string
 }
 

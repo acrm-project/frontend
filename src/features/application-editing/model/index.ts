@@ -6,12 +6,12 @@ import {
   split,
 } from 'effector'
 import { pending } from 'patronum'
-import { IApplicationFromBackend } from '../../api/application-creation/types'
+import { ApplicationType } from 'shared/api/application'
 import {
   saveChangedApplication,
   getApplicationForEditing,
-} from '../../api/application-editing'
-import { historyPush } from '../../lib/routing/history'
+} from 'api/application-editing'
+import { historyPush } from 'lib/routing/history'
 
 // types
 
@@ -20,17 +20,12 @@ export const fetchApplicationToEdit = createEvent<number>()
 export const saveChanges = createEvent<any>()
 
 // effects
-export const fetchApplicationToEditFx = createEffect<
-  number,
-  IApplicationFromBackend
->()
+export const fetchApplicationToEditFx = createEffect<number, void, Error>()
 
-export const saveChangesFx = createEffect<IApplicationFromBackend, void>()
+export const saveChangesFx = createEffect<ApplicationType, void, Error>()
 
 // stores
-export const $applicationToEdit = createStore<IApplicationFromBackend | null>(
-  null
-)
+export const $applicationToEdit = createStore<ApplicationType | null>(null)
 export const $loading = pending({ effects: [fetchApplicationToEditFx] })
 
 // relationships
@@ -38,13 +33,13 @@ export const $loading = pending({ effects: [fetchApplicationToEditFx] })
 forward({ from: fetchApplicationToEdit, to: fetchApplicationToEditFx })
 
 fetchApplicationToEditFx.use(async (id) => {
-  return getApplicationForEditing(id)
+  // return getApplicationForEditing(id)
 })
 
 forward({ from: saveChanges, to: saveChangesFx })
 
 saveChangesFx.use(async (editedApplication) => {
-  return saveChangedApplication(editedApplication)
+  // return saveChangedApplication(editedApplication)
 })
 
 $applicationToEdit.on(
