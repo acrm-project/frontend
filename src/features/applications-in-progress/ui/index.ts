@@ -1,0 +1,1 @@
+export { ApplicationsInProgressTable } from './table'

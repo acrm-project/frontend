@@ -1,10 +1,11 @@
 import { createEvent, createEffect, forward, sample } from 'effector'
 import { deleteOne } from '../../api/application-deleting'
-import { $clientId, getClientApplications } from '../client'
+import { $clientId } from 'entities/client'
+import { getApplications } from 'entities/application'
 
-export const deleteApplication = createEvent<string>()
+export const deleteApplication = createEvent<number>()
 
-export const deleteApplicationFx = createEffect<string, void>()
+export const deleteApplicationFx = createEffect<number, void>()
 
 forward({ from: deleteApplication, to: deleteApplicationFx })
 
@@ -16,5 +17,5 @@ deleteApplicationFx.use(async (id) => {
 sample({
   clock: deleteApplicationFx.done,
   source: $clientId,
-  target: getClientApplications,
+  target: getApplications,
 })

@@ -1,1 +1,8 @@
-export { $client, $clients, resetClient, resetClients } from './model'
+export {
+  $client,
+  $clients,
+  $clientId,
+  resetClient,
+  resetClients,
+  getClient,
+} from './model'

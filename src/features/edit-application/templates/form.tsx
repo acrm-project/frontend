@@ -1,11 +1,13 @@
 import { useFormik } from 'formik'
 import { Button } from 'antd'
 import { saveChanges } from '../index'
-import { FormWrapper, Form, ButtonSection } from '../../../reusable/form/styled'
+import {
+  FormWrapper,
+  Form,
+  ButtonSection,
+} from 'shared/ui/form-sections/styled'
 import { IApplicationFromScratch } from '../../../api/application-creation/types'
-import { Client } from '../../../reusable/form/sections/client'
-import { Vehicle } from '../../../reusable/form/sections/vehicle'
-import { Issues } from '../../../reusable/form/sections/issues'
+import { Issues, Client, Vehicle } from 'shared/ui/form-sections'
 
 type EditApplicationFormPropsType = {
   fields: IApplicationFromScratch

@@ -1,13 +1,10 @@
 import { Tag } from 'antd'
-import {
-  IApplicationFromBackend,
-  ClientType,
-  Status,
-} from '../../api/application-creation/types'
+import { ApplicationType } from 'shared/api/application'
+import { Status } from '../../api/application-creation/types'
 
 export type TableRowType = {
-  key: string
-  id: string
+  key: number
+  id: number
   vehicleName: string
   engineSpecification: string
   registrationNumber: string
@@ -15,16 +12,13 @@ export type TableRowType = {
   VIN: string
   status: Status
   description: string | ''
-  client?: ClientType
   createdAt: string
   startedAt?: string
   closedAt?: string
   closed: boolean
 }
 
-export const tableRows = (
-  applications: IApplicationFromBackend[]
-): TableRowType[] => {
+export const tableRows = (applications: ApplicationType[]): TableRowType[] => {
   return applications.map((application) => ({
     // key is required for table fields only
     key: application.id,
@@ -36,7 +30,6 @@ export const tableRows = (
     VIN: application.vehicle.VIN,
     status: application.status,
     description: application.issues.description!,
-    client: application.client,
     createdAt: application.createdAt,
     startedAt: application.startedAt,
     closedAt: application.closedAt,

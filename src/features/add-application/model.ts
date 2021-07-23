@@ -1,7 +1,8 @@
 import { createEvent, createEffect, sample } from 'effector'
 import { addNewApplication } from '../../api/application-creation'
 import { NewClientApplicationType } from '../../api/application-creation/types'
-import { $clientId, getClientApplications } from '../../features/client'
+import { getClientApplications } from 'features/client'
+import { $clientId } from 'entities/client'
 
 // types
 

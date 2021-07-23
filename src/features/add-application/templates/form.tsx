@@ -1,16 +1,18 @@
 import { FC } from 'react'
 import { useFormik } from 'formik'
 import { Button } from 'antd'
-import { FormWrapper, Form } from '../../../reusable/form/styled'
 import { onClose } from '../../../lib/create-application-modal-window/model'
 import { addApplication } from '../index'
 import { NewClientApplicationType } from '../../../api/application-creation/types'
-import { Vehicle } from '../../../reusable/form/sections/vehicle'
-import { Issues } from '../../../reusable/form/sections/issues'
-import { ButtonSection } from '../../../reusable/form/styled'
+import { Vehicle, Client, Issues } from 'shared/ui/form-sections'
+import {
+  ButtonSection,
+  FormWrapper,
+  Form,
+} from 'shared/ui/form-sections/styled'
 
 type AddApplicationFormPropsType = {
-  fields: NewClientApplicationType
+  fields: any
   closable?: boolean
   submitionText: string
 }

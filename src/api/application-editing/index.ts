@@ -2,7 +2,7 @@ import { IApplicationFromBackend } from '../application-creation/types'
 import { request, ResponseType } from '../request'
 
 export const getApplicationForEditing = async (
-  id: string
+  id: number
 ): Promise<IApplicationFromBackend> => {
   const application = await request.get<ResponseType<IApplicationFromBackend>>(
     `/${id}/edit`

@@ -10,11 +10,7 @@ import { Layout, Children } from '../../../app/global-styles/common'
 import { SideMenu } from '../../../ui/side-menu'
 import { Navbar } from '../../../ui/navbar'
 import { $isVisible } from '../../../lib/create-application-modal-window/model'
-import {
-  client,
-  vehicle,
-  issues,
-} from '../../../reusable/form/initial-form-values'
+import { client, vehicle, issues } from 'shared/ui/form-sections'
 
 export const MainLayout: FC = ({ children }) => {
   const isVisible = useStore($isVisible)

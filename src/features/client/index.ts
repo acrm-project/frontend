@@ -1,6 +1,4 @@
 export {
-  $client,
-  $clientId,
   $loading,
   getClient,
   getClientApplications,

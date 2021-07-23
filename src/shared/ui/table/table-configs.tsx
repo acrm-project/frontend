@@ -1,10 +1,10 @@
 import { Space } from 'antd'
-import { Status } from '../../api/application-creation/types'
-import { deleteApplication } from '../../features/application-deleting'
-import { fetchApplicationToEdit } from '../../features/edit-application'
-import { prepareApplicationForOrder } from '../../features/order-creation'
-import { toClosed, toProgress } from '../../features/statuses'
-import { statusRow, TableRowType } from '../../lib/table-rows'
+import { Status } from 'api/application-creation/types'
+import { deleteApplication } from 'features/application-deleting'
+import { fetchApplicationToEdit } from 'features/edit-application'
+import { prepareApplicationForOrder } from 'features/order-creation'
+import { toClosed, toProgress } from 'features/statuses'
+import { statusRow, TableRowType } from 'lib/table-rows'
 
 export const columns = [
   {

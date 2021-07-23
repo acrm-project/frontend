@@ -4,7 +4,6 @@ import {
   createEffect,
   forward,
   split,
-  sample,
 } from 'effector'
 import { pending } from 'patronum'
 import { IApplicationFromBackend } from '../../api/application-creation/types'
@@ -13,17 +12,16 @@ import {
   getApplicationForEditing,
 } from '../../api/application-editing'
 import { historyPush } from '../../lib/routing/history'
-import { $clientId } from '../client'
 
 // types
 
 // events
-export const fetchApplicationToEdit = createEvent<string>()
+export const fetchApplicationToEdit = createEvent<number>()
 export const saveChanges = createEvent<any>()
 
 // effects
 export const fetchApplicationToEditFx = createEffect<
-  string,
+  number,
   IApplicationFromBackend
 >()
 

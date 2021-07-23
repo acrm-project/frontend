@@ -1,8 +1,8 @@
 import { useFormik } from 'formik'
 import { IApplicationFromBackend } from '../../../../api/application-creation/types'
-import { Client } from '../../../../reusable/form/sections/client'
-import { Vehicle } from '../../../../reusable/form/sections/vehicle'
-import { Issues } from '../../../../reusable/form/sections/issues'
+import { Client } from 'shared/ui/form-sections'
+import { Vehicle } from 'shared/ui/form-sections'
+import { Issues } from 'shared/ui/form-sections'
 import { FormWrapper, Form, ApplicationInfoSection } from './styled'
 
 type PrepareOrderFormProps = {

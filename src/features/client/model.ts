@@ -17,13 +17,9 @@ export const getClientApplicationsFx = createEffect<
   IApplicationFromBackend[]
 >()
 
-export const $client = createStore<ClientType | null>(null)
-
 export const $loading = pending({
   effects: [getClientFx, getClientApplicationsFx],
 })
-
-export const $clientId = $client.map((client) => client?.id!)
 
 // Client
 forward({ from: getClient, to: getClientFx })
@@ -31,8 +27,6 @@ forward({ from: getClient, to: getClientFx })
 getClientFx.use(async (clientId: number) => {
   return getClientById(clientId)
 })
-
-$client.on(getClientFx.doneData, (_prev, client) => client)
 
 // Client applications
 forward({ from: getClientApplications, to: getClientApplicationsFx })

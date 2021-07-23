@@ -9,7 +9,7 @@ import {
   onClose,
   onOpen,
 } from '../../lib/new-application-modal/model'
-import { vehicle, issues } from '../../reusable/form/initial-form-values'
+import { vehicle, issues } from 'shared/ui/form-sections'
 
 export const ClientApplicationsPage: FC = () => {
   const isVisible = useStore($isVisible)

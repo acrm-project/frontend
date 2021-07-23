@@ -16,7 +16,7 @@ export const EditApplicationPage: FC = () => {
   const loading = useStore($loading)
 
   useEffect(() => {
-    fetchApplicationToEdit(id)
+    // fetchApplicationToEdit(id)
   }, [])
 
   const loadForm = () =>

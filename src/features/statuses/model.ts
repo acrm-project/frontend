@@ -3,8 +3,9 @@ import {
   setApplicationToProgress,
   setApplicationToClosed,
 } from '../../api/statuses'
-import { $clientId, getClientApplications } from '../client'
-import { fetchApplicationsInProgress } from '../../pages/in-progress/model'
+import { $clientId } from 'entities/client'
+import { getApplicationsInProgressFx } from 'entities/application'
+import { getApplications } from 'entities/application'
 import { $location } from '../../lib/routing/history'
 
 export const toProgress = createEvent<number>()
@@ -30,7 +31,7 @@ toClosedFx.use(async (applicationId) => {
 sample({
   clock: toProgressFx.done,
   source: $clientId,
-  target: getClientApplications,
+  target: getApplications,
 })
 
 // splitting request depending on current location
@@ -44,7 +45,7 @@ split({
     refetch_from_client: (location) => location.startsWith('/clients'),
   },
   cases: {
-    refetch_in_progress: fetchApplicationsInProgress,
+    refetch_in_progress: getApplicationsInProgressFx,
 
     refetch_from_client: splittedRefetch,
   },
@@ -54,5 +55,5 @@ sample({
   clock: splittedRefetch,
   source: $clientId,
   fn: (id, url) => id,
-  target: getClientApplications,
+  target: getApplications,
 })

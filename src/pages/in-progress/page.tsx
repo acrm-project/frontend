@@ -1,17 +1,11 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
+import { useGate } from 'effector-react'
 import { MainLayout } from '../../shared/layouts/main'
-import {
-  fetchApplicationsInProgress,
-  resetApplicationsInProgress,
-} from './model'
-import { ApplicationsInProgressTable } from '../../ui/applications-in-progress-table'
+import { pageMountedGate } from './model'
+import { ApplicationsInProgressTable } from 'features/applications-in-progress'
 
 export const ApplicationsInProgress: FC = () => {
-  useEffect(() => {
-    fetchApplicationsInProgress()
-
-    return () => resetApplicationsInProgress()
-  }, [])
+  useGate(pageMountedGate)
 
   return (
     <MainLayout>
