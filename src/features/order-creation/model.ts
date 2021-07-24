@@ -1,5 +1,4 @@
 import { createEvent, createEffect, guard, createStore } from 'effector'
-import { IApplicationFromBackend } from '../../api/application-creation/types'
 import { getApplicationForPrepare } from '../../api/orders'
 import { historyPush } from '../../lib/routing/history'
 
@@ -9,15 +8,10 @@ export const createOrder = createEvent<any>()
 
 // effects
 
-export const prepareApplicationForOrderFx = createEffect<
-  number,
-  IApplicationFromBackend
->()
+export const prepareApplicationForOrderFx = createEffect<number, any>()
 
 // stores
-export const $preparedApplication = createStore<IApplicationFromBackend | null>(
-  null
-)
+export const $preparedApplication = createStore<any | null>(null)
   .on(prepareApplicationForOrderFx.doneData, (_, application) => application)
   .reset(resetPreparedOrder)
 

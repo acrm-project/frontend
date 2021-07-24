@@ -1,5 +1,5 @@
 import { createEffect, createEvent, createStore, forward } from 'effector'
-import { ClientType } from 'shared/api/client'
+import { ClientType } from 'shared/types/client.type'
 
 export const getClient = createEvent<number>()
 export const resetClient = createEvent<void>()

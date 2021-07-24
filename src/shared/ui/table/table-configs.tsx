@@ -1,5 +1,5 @@
 import { Space } from 'antd'
-import { Status } from 'api/application-creation/types'
+import { Status } from 'shared/types/status.enum'
 import { deleteApplication } from 'features/application-deleting'
 import { fetchApplicationToEdit } from 'features/application-editing'
 import { prepareApplicationForOrder } from 'features/order-creation'

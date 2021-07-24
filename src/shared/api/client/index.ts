@@ -1,12 +1,5 @@
 import { request } from '../request'
-
-export type ClientType = {
-  id: number
-  name: string
-  surname: string
-  phoneNumber: string
-  email: string
-}
+import { ClientType } from 'shared/types/client.type'
 
 export const getClientById = async (id: number): Promise<ClientType> => {
   const client = await request.get(`/clients/get/${id}`)

@@ -1,7 +1,9 @@
 import { createStore, createEvent, createEffect, sample } from 'effector'
-import { $clients } from 'entities/client'
+
 import { getClientsBySearchQuery } from 'shared/api/client'
-import { ClientType } from 'shared/api/client'
+import { $clients } from 'entities/client'
+
+import { ClientType } from 'shared/types/client.type'
 
 // types
 

@@ -1,5 +1,5 @@
 import { createStore, createEvent, createEffect, forward } from 'effector'
-import { ApplicationType } from 'shared/api/application'
+import { ApplicationType } from 'shared/api/application/types'
 
 export const getApplications = createEvent<number>()
 export const getApplicationsInProgress = createEvent<void>()

@@ -1,9 +1,8 @@
 import { FC } from 'react'
 import { useFormik } from 'formik'
 import { Button } from 'antd'
-import { onClose } from '../../../lib/create-application-modal-window/model'
-import { addApplication } from '../index'
-import { NewClientApplicationType } from '../../../api/application-creation/types'
+import { onClose } from 'lib/create-application-modal-window/model'
+import { addApplication } from '../model'
 import { Vehicle, Client, Issues } from 'shared/ui/form-sections'
 import {
   ButtonSection,

@@ -1,22 +1,5 @@
 import { request } from '../request'
-
-export type ApplicationType = {
-  id: number
-  clientId: number
-  vehicle: any
-  issues: any
-  status: any
-  createdAt: any
-  startedAt: any
-  closedAt: any
-  closed: boolean
-}
-
-export type ApplicationFormType = {
-  client: any
-  vehicle: any
-  issues: any
-}
+import { ApplicationType, ApplicationFormType } from './types'
 
 export const createApplicationFromScratch = async (
   applicationFormData: ApplicationFormType
@@ -28,8 +11,13 @@ export const createApplicationFromScratch = async (
   return application.data
 }
 
-// export const addNewApplication = (
-//   clientId: number,
-//   application: NewClientApplicationType
-// ): Promise<ResponseType<void>> =>
-//   request.post(`application-creation/${clientId}/add-new`, application)
+export const addNewApplication = async (
+  clientId: number,
+  applicationFormData: Omit<ApplicationFormType, 'client'>
+): Promise<void> => {
+  const application = await request.post(
+    `applications/${clientId}/add`,
+    applicationFormData
+  )
+  return application.data
+}

@@ -1,11 +1,8 @@
-import {
-  IApplicationFromScratch,
-  IApplicationFromBackend,
-  ClientType,
-  Status,
-} from '../application-creation/types'
+import { ClientType } from 'shared/types/client.type'
+import { ApplicationType } from 'shared/api/application/types'
+import { Status } from 'shared/types/status.enum'
 
-export const clients: ClientType[] = [
+export const clients: Omit<ClientType, 'id'>[] = [
   {
     name: 'Alexandr',
     surname: 'Vasilev',
@@ -87,7 +84,7 @@ export const clientApplications = [
   },
 ]
 
-export const application: IApplicationFromScratch = {
+export const application: any = {
   client: {
     name: 'Alexandr',
     surname: 'Vasilev',

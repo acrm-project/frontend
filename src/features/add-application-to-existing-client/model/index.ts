@@ -1,18 +1,18 @@
 import { createEvent, createEffect, sample } from 'effector'
-import { addNewApplication } from 'api/application-creation'
-import { NewClientApplicationType } from 'api/application-creation/types'
+import { addNewApplication } from 'shared/api/application'
+import { ApplicationFormType } from 'shared/api/application/types'
 import { $clientId } from 'entities/client'
 import { getApplications } from 'entities/application'
 
 // types
 
 // events
-export const addApplication = createEvent<NewClientApplicationType>()
+export const addApplication = createEvent<Omit<ApplicationFormType, 'client'>>()
 
 // effects
 
 export const addNewApplicationFx = createEffect<
-  { clientId: number; application: NewClientApplicationType },
+  { clientId: number; application: Omit<ApplicationFormType, 'client'> },
   any
 >()
 

@@ -15,5 +15,5 @@ export const vehicle = {
 }
 
 export const issues = {
-  descrition: '',
+  description: '',
 }

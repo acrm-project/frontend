@@ -6,11 +6,7 @@ import {
   split,
 } from 'effector'
 import { pending } from 'patronum'
-import { ApplicationType } from 'shared/api/application'
-import {
-  saveChangedApplication,
-  getApplicationForEditing,
-} from 'api/application-editing'
+import { ApplicationType } from 'shared/api/application/types'
 import { historyPush } from 'lib/routing/history'
 
 // types

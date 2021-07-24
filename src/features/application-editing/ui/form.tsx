@@ -7,7 +7,7 @@ import {
   ButtonSection,
 } from 'shared/ui/form-sections/styled'
 import { Issues, Client, Vehicle } from 'shared/ui/form-sections'
-import { ApplicationType } from 'shared/api/application'
+import { ApplicationType } from 'shared/api/application/types'
 
 type EditApplicationFormPropsType = {
   fields: ApplicationType

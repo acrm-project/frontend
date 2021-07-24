@@ -1,9 +1,9 @@
 import { createEffect, createEvent, forward } from 'effector'
+import { createApplicationFromScratch } from 'shared/api/application'
 import {
   ApplicationFormType,
   ApplicationType,
-  createApplicationFromScratch,
-} from 'shared/api/application'
+} from 'shared/api/application/types'
 
 export const createApplication = createEvent<ApplicationFormType>()
 

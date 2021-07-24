@@ -1,6 +1,6 @@
 import { Tag } from 'antd'
-import { ApplicationType } from 'shared/api/application'
-import { Status } from '../../api/application-creation/types'
+import { ApplicationType } from 'shared/api/application/types'
+import { Status } from 'shared/types/status.enum'
 
 export type TableRowType = {
   key: number

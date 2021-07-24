@@ -1,4 +1,4 @@
-import { ClientType } from '../../api/application-creation/types'
+import { ClientType } from 'shared/types/client.type'
 import {
   DescriptionInfo,
   ClientInfo,
