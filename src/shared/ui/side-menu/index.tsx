@@ -1,6 +1,6 @@
 import { Menu } from 'antd'
 import SubMenu from 'antd/lib/menu/SubMenu'
-import { onOpen } from 'lib/create-application-modal-window/model'
+import { onOpen } from 'features/application-form-modal'
 import { useSelectedLinks } from 'lib/selected-menu-links-hook'
 import { $dark_gray } from 'app/global-styles/colors'
 import {

@@ -1,16 +1,12 @@
 import { FC } from 'react'
-import { useStore } from 'effector-react'
-import { onOpen, onClose } from 'lib/create-application-modal-window/model'
 import { CreateApplicationForm } from 'features/create-application-from-scratch'
-import { ModalWindow } from 'shared/ui/application-form-modal'
 import { Layout, Children } from 'app/global-styles/common'
 import { SideMenu } from 'shared/ui/side-menu'
 import { Navbar } from 'shared/ui/navbar'
-import { $isVisible } from 'lib/create-application-modal-window/model'
+import { ModalWindow } from 'features/application-form-modal'
 import { client, vehicle, issues } from 'shared/ui/form-sections'
 
 export const MainLayout: FC = ({ children }) => {
-  const isVisible = useStore($isVisible)
   return (
     <>
       <Navbar />
@@ -18,7 +14,7 @@ export const MainLayout: FC = ({ children }) => {
         <SideMenu />
         <Children>{children}</Children>
 
-        <ModalWindow isVisible={isVisible} onOpen={onOpen} onClose={onClose}>
+        <ModalWindow>
           <CreateApplicationForm
             fields={{
               client: { ...client },
