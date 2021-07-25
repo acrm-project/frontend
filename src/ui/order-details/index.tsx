@@ -1,4 +1,4 @@
-import { OrderDetailsForm } from '../../features/order-creation/templates/order-details-form/form'
+import { OrderDetailsForm } from 'features/order-creation'
 
 export const OrderDetails = (): JSX.Element => {
   return (

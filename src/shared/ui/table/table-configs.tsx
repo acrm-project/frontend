@@ -3,7 +3,7 @@ import { Status } from 'shared/types/status.enum'
 import { applicationDeleted } from 'features/application-deleting'
 import { fetchApplicationToEdit } from 'features/application-editing'
 import { prepareApplicationForOrder } from 'features/order-creation'
-import { toClosed, toProgress } from 'features/statuses'
+import { toClosed, toProgress } from 'features/change-application-status'
 import { statusRow, TableRowType } from 'lib/table-rows'
 
 export const columns = [

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { OrdersSearch } from '../../templates/search'
+import { OrdersSearch } from '../../ui/search'
 
 describe('OrdersSearch component', () => {
   it('renders to the DOM', () => {

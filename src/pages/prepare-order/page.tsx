@@ -1,7 +1,7 @@
 import { Tabs } from 'antd'
-import { MainLayout } from '../../shared/layouts/main'
-import { ApplicationForOrder } from '../../ui/application-for-order'
-import { OrderDetails } from '../../ui/order-details'
+import { MainLayout } from 'shared/layouts/main'
+import { ApplicationForOrder } from 'ui/application-for-order'
+import { OrderDetails } from 'ui/order-details'
 
 const { TabPane } = Tabs
 

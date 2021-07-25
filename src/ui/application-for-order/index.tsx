@@ -3,7 +3,7 @@ import { useStore } from 'effector-react'
 import { useParams } from 'react-router-dom'
 import { Spin } from 'antd'
 import { ApplicationType } from 'shared/api/application/types'
-import { ApplicationForOrderForm } from '../../features/order-creation/templates/application-for-order-form/form'
+import { ApplicationForOrderForm } from 'features/order-creation'
 import {
   $preparedApplication,
   prepareApplicationForOrder,

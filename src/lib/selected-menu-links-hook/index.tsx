@@ -1,7 +1,7 @@
 import { Menu } from 'antd'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
-import { historyPush } from '../routing/history'
+import { historyPush } from 'lib/routing/history'
 
 export type Link = { key: string; label: string; path: string }
 

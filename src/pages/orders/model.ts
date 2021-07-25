@@ -1,6 +1,6 @@
 import { createStore } from 'effector'
 import { pending } from 'patronum'
-import { getOrdersFx } from '../../features/orders-search'
+import { getOrdersFx } from 'features/orders-search'
 
 export const $orders = createStore<any>([]).on(
   getOrdersFx.doneData,

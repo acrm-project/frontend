@@ -1,11 +1,12 @@
-import { ClientApplicationsPage } from '../../pages/client-applications/page'
-import { HomePage } from '../../pages/home'
-import { ClientsPage } from '../../pages/clients'
 import { Urls } from './urls'
-import { ApplicationsInProgress } from '../../pages/in-progress/page'
-import { EditApplicationPage } from '../../pages/edit-application/page'
-import { OrdersPage } from '../../pages/orders/page'
-import { PrepareOrderPage } from '../../pages/prepare-order/page'
+
+import { ClientApplicationsPage } from 'pages/client-applications/page'
+import { HomePage } from 'pages/home'
+import { ClientsPage } from 'pages/clients'
+import { ApplicationsInProgress } from 'pages/in-progress/page'
+import { EditApplicationPage } from 'pages/edit-application/page'
+import { OrdersPage } from 'pages/orders/page'
+import { PrepareOrderPage } from 'pages/prepare-order/page'
 
 export const routes = () => [
   {

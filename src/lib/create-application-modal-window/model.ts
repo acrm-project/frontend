@@ -1,5 +1,5 @@
-import { createStore, createEvent } from 'effector'
 import { MouseEvent } from 'react'
+import { createStore, createEvent } from 'effector'
 
 export const onOpen = createEvent<void>()
 export const onClose = createEvent<MouseEvent<HTMLElement> | void>()
