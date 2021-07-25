@@ -1,5 +1,5 @@
 import { createEvent, createEffect, guard, createStore } from 'effector'
-import { getApplicationForPrepare } from '../../api/orders'
+import { getApplicationForPrepare } from 'shared/api/order'
 import { historyPush } from '../../lib/routing/history'
 
 export const prepareApplicationForOrder = createEvent<number>()

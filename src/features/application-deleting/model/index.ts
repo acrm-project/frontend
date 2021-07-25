@@ -1,16 +1,16 @@
 import { createEvent, createEffect, forward, sample } from 'effector'
-import { deleteOne } from 'api/application-deleting'
+import { deleteApplication } from 'shared/api/application'
 import { $clientId } from 'entities/client'
 import { getApplications } from 'entities/application'
 
-export const deleteApplication = createEvent<number>()
+export const applicationDeleted = createEvent<number>()
 
 export const deleteApplicationFx = createEffect<number, void>()
 
-forward({ from: deleteApplication, to: deleteApplicationFx })
+forward({ from: applicationDeleted, to: deleteApplicationFx })
 
 deleteApplicationFx.use(async (id) => {
-  await deleteOne(id)
+  await deleteApplication(id)
 })
 
 // refetch client applications after deleting one

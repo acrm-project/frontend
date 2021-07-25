@@ -1,6 +1,6 @@
 import { Space } from 'antd'
 import { Status } from 'shared/types/status.enum'
-import { deleteApplication } from 'features/application-deleting'
+import { applicationDeleted } from 'features/application-deleting'
 import { fetchApplicationToEdit } from 'features/application-editing'
 import { prepareApplicationForOrder } from 'features/order-creation'
 import { toClosed, toProgress } from 'features/statuses'
@@ -65,11 +65,11 @@ export const columns = [
         ) : null}
 
         {record.closed ? (
-          <a onClick={() => deleteApplication(record.id)}>Удалить</a>
+          <a onClick={() => applicationDeleted(record.id)}>Удалить</a>
         ) : null}
 
         {record.status === Status.CREATED ? (
-          <a onClick={() => deleteApplication(record.id)}>Удалить</a>
+          <a onClick={() => applicationDeleted(record.id)}>Удалить</a>
         ) : null}
       </Space>
     ),

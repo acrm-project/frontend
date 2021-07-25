@@ -1,4 +1,3 @@
-//import { IApplicationFromBackend } from '../application-creation/types'
 import { request } from '../request'
 
 export const getApplicationForPrepare = async (id: number): Promise<any> => {

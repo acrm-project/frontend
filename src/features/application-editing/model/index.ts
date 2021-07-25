@@ -6,6 +6,10 @@ import {
   split,
 } from 'effector'
 import { pending } from 'patronum'
+import {
+  getApplicationForEditing,
+  saveChangedApplication,
+} from 'shared/api/application'
 import { ApplicationType } from 'shared/api/application/types'
 import { historyPush } from 'lib/routing/history'
 
@@ -29,13 +33,13 @@ export const $loading = pending({ effects: [fetchApplicationToEditFx] })
 forward({ from: fetchApplicationToEdit, to: fetchApplicationToEditFx })
 
 fetchApplicationToEditFx.use(async (id) => {
-  // return getApplicationForEditing(id)
+  return getApplicationForEditing(id)
 })
 
 forward({ from: saveChanges, to: saveChangesFx })
 
 saveChangesFx.use(async (editedApplication) => {
-  // return saveChangedApplication(editedApplication)
+  await saveChangedApplication(editedApplication)
 })
 
 $applicationToEdit.on(

@@ -1,1 +1,1 @@
-export { deleteApplication, deleteApplicationFx } from './model'
+export { applicationDeleted, deleteApplicationFx } from './model'

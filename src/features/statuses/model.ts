@@ -1,30 +1,42 @@
 import { createEvent, createEffect, sample, forward, split } from 'effector'
-import {
-  setApplicationToProgress,
-  setApplicationToClosed,
-} from '../../api/statuses'
+import { changeApplicationStatus } from 'shared/api/application'
 import { $clientId } from 'entities/client'
 import { getApplicationsInProgressFx } from 'entities/application'
 import { getApplications } from 'entities/application'
 import { $location } from '../../lib/routing/history'
+import { Status } from 'shared/types/status.enum'
 
 export const toProgress = createEvent<number>()
 export const toClosed = createEvent<number>()
 const splittedRefetch = createEvent<string>()
 
-export const toProgressFx = createEffect<number, void>()
-export const toClosedFx = createEffect<number, void>()
+export const toProgressFx = createEffect<
+  { applicationId: number; status: Status },
+  void
+>()
+export const toClosedFx = createEffect<
+  { applicationId: number; status: Status },
+  void
+>()
 
-forward({ from: toProgress, to: toProgressFx })
-
-toProgressFx.use(async (applicationId) => {
-  await setApplicationToProgress(applicationId)
+sample({
+  clock: toProgress,
+  fn: (applicationId) => ({ applicationId, status: Status.IN_PROGRESS }),
+  target: toProgressFx,
 })
 
-forward({ from: toClosed, to: toClosedFx })
+toProgressFx.use(async ({ applicationId, status }) => {
+  await changeApplicationStatus(applicationId, status)
+})
 
-toClosedFx.use(async (applicationId) => {
-  await setApplicationToClosed(applicationId)
+sample({
+  clock: toClosed,
+  fn: (applicationId) => ({ applicationId, status: Status.IN_PROGRESS }),
+  target: toClosedFx,
+})
+
+toClosedFx.use(async ({ applicationId, status }) => {
+  await changeApplicationStatus(applicationId, status)
 })
 
 // refetch applications after effects are done

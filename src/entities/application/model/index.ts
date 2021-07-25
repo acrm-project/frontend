@@ -1,4 +1,8 @@
 import { createStore, createEvent, createEffect, forward } from 'effector'
+import {
+  getAllApplications,
+  getAplicationsInProgress,
+} from 'shared/api/application'
 import { ApplicationType } from 'shared/api/application/types'
 
 export const getApplications = createEvent<number>()
@@ -22,6 +26,11 @@ export const $applicationsInProgress = createStore<ApplicationType[]>([])
 forward({ from: getApplications, to: getApplicationsFx })
 
 getApplicationsFx.use(async (clientId) => {
-  //api
-  return []
+  return getAllApplications(clientId)
+})
+
+forward({ from: getApplicationsInProgress, to: getApplicationsInProgressFx })
+
+getApplicationsInProgressFx.use(() => {
+  return getAplicationsInProgress()
 })
