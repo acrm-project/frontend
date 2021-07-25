@@ -1,8 +1,8 @@
 import { Menu } from 'antd'
 import SubMenu from 'antd/lib/menu/SubMenu'
-import { onOpen } from '../../lib/create-application-modal-window/model'
-import { useSelectedLinks } from '../../lib/selected-menu-links-hook'
-import { $dark_gray } from '../../app/global-styles/colors'
+import { onOpen } from 'lib/create-application-modal-window/model'
+import { useSelectedLinks } from 'lib/selected-menu-links-hook'
+import { $dark_gray } from 'app/global-styles/colors'
 import {
   AppstoreOutlined,
   AuditOutlined,

@@ -1,5 +1,5 @@
 import { Table } from 'antd'
-import { ExpandedData } from '../../../ui/application-expanded-data'
+import { ExpandedData } from 'shared/ui/application-expanded-data'
 
 type ApplicationsTableType = {
   columns: any

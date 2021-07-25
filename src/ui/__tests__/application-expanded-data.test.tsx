@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { ClientType } from '../../api/application-creation/types'
-import { ExpandedData } from '../application-expanded-data'
+import { ExpandedData } from '../../shared/ui/application-expanded-data'
 
 describe('ExpandedData', () => {
   let client: ClientType = {

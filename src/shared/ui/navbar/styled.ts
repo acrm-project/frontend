@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { $dark_blue, $light_blue } from '../../app/global-styles/colors'
+import { $dark_blue, $light_blue } from 'app/global-styles/colors'
 
 export const StyledNavbar = styled.div`
   display: flex;

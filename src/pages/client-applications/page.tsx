@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useStore } from 'effector-react'
 import { MainLayout } from 'shared/layouts/main'
-import { ModalWindow } from 'ui/create-application-modal'
+import { ModalWindow } from 'shared/ui/application-form-modal'
 import { AddApplicationForm } from 'features/add-application-to-existing-client'
 import { ClientApplicationsData } from 'ui/client-applications-data'
 import { $isVisible, onClose, onOpen } from 'lib/new-application-modal/model'

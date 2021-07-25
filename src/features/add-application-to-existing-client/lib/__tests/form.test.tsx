@@ -4,7 +4,7 @@ import {
   issues,
   vehicle,
 } from '../../../../reusable/form/initial-form-values'
-import { ModalWindow } from '../../../../ui/create-application-modal'
+import { ModalWindow } from '../../../../shared/ui/application-form-modal'
 import { AddApplicationForm } from '../../ui/form'
 
 describe('Add application modal with form', () => {
