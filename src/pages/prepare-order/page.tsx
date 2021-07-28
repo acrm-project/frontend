@@ -1,7 +1,7 @@
 import { Tabs } from 'antd'
 import { OrderDetails } from 'features/order-creation'
 import { MainLayout } from 'shared/layouts/main'
-import { ApplicationForOrder } from 'ui/application-for-order'
+import { ApplicationForOrder } from 'shared/ui/application-for-order'
 
 const { TabPane } = Tabs
 

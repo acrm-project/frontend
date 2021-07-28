@@ -1,7 +1,7 @@
 import { useStore } from 'effector-react'
 import { Button } from 'antd'
 import { columns } from 'shared/ui/table/table-configs'
-import { tableRows } from '../../lib/table-rows'
+import { tableRows } from '../../../lib/table-rows'
 import { ApplicationsTable } from 'shared/ui/table'
 import { ApplicationsTableContainer } from 'shared/ui/table/styled'
 import { onOpen } from 'lib/application-form-modal'

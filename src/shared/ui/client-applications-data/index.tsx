@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getClient } from 'entities/client'
 import { getApplications } from 'entities/application'
-import { ClientApplicationsTable } from '../../ui/client-applications-table'
+import { ClientApplicationsTable } from '../client-applications-table'
 import { ClientDetails } from 'features/client-details'
 import { Spin } from 'antd'
 

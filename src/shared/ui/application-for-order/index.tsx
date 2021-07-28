@@ -8,7 +8,7 @@ import {
   $preparedApplication,
   prepareApplicationForOrder,
   resetPreparedOrder,
-} from '../../features/order-creation'
+} from '../../../features/order-creation'
 
 const isNotNullableOrder = (fields: any): fields is ApplicationType => {
   return typeof fields !== undefined
