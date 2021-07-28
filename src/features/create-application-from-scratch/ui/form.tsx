@@ -6,7 +6,7 @@ import {
   Form,
   ButtonSection,
 } from 'shared/ui/form-sections/styled'
-import { onClose } from 'lib/create-application-modal-window/model'
+import { onClose } from 'lib/application-form-modal'
 import { ApplicationFormType } from 'shared/api/application/types'
 import { createApplication } from '../model'
 import { Client, Vehicle, Issues } from 'shared/ui/form-sections'

@@ -8,6 +8,7 @@ type ModalWindowProps = {
 
 export const ModalWindow = ({ children }: ModalWindowProps): JSX.Element => {
   const isVisible = useStore($isVisible)
+
   return (
     <>
       <Modal

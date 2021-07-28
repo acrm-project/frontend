@@ -1,10 +1,9 @@
 import { FC } from 'react'
 import { useStore } from 'effector-react'
 import { MainLayout } from 'shared/layouts/main'
-import { ModalWindow } from 'shared/ui/application-form-modal'
+import { ModalWindow, $isVisible } from 'lib/application-form-modal'
 import { AddApplicationForm } from 'features/add-application-to-existing-client'
 import { ClientApplicationsData } from 'ui/client-applications-data'
-import { $isVisible, onClose, onOpen } from 'lib/new-application-modal/model'
 import { vehicle, issues } from 'shared/ui/form-sections'
 
 export const ClientApplicationsPage: FC = () => {
@@ -14,7 +13,7 @@ export const ClientApplicationsPage: FC = () => {
     <MainLayout>
       <ClientApplicationsData />
 
-      <ModalWindow isVisible={isVisible} onClose={onClose} onOpen={onOpen}>
+      <ModalWindow>
         <AddApplicationForm
           fields={{
             vehicle: { ...vehicle },

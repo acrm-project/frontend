@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { $dark_gray, $light_gray } from './colors'
+import { $dark_gray, $light_gray } from '../../shared/styles/colors'
 
 export const GlobalStyles = createGlobalStyle`
 

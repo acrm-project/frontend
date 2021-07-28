@@ -4,7 +4,7 @@ import { columns } from 'shared/ui/table/table-configs'
 import { tableRows } from '../../lib/table-rows'
 import { ApplicationsTable } from 'shared/ui/table'
 import { ApplicationsTableContainer } from 'shared/ui/table/styled'
-import { onOpen } from '../../lib/new-application-modal/model'
+import { onOpen } from 'lib/application-form-modal'
 import { $applications } from 'entities/application'
 
 export const ClientApplicationsTable = (): JSX.Element => {
